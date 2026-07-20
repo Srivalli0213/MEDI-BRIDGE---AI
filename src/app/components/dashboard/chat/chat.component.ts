@@ -197,8 +197,6 @@ export class ChatComponent implements OnInit {
     speakAndReveal(text: string, index: number) {
         console.log('[MediBot] speakAndReveal called, index=', index, 'text=', text);
         const win = window as any;
-        const supportsBoundary = !!(win && win.speechSynthesis && (typeof (SpeechSynthesisUtterance.prototype as any).onboundary !== 'undefined'));
-        console.log('[MediBot] speechSynthesis available=', !!win.speechSynthesis, 'supportsBoundary=', supportsBoundary);
 
         if (index === -1) {
             this.messages.push({ sender: 'bot', text: '', draft: true } as any);
