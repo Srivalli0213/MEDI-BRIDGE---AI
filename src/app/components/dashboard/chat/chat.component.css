@@ -6,14 +6,14 @@
 .message { padding:8px 10px; border-radius:8px; font-size:13px; }
 .message-bot { background: rgba(255,255,255,0.03); color: var(--text); align-self:flex-start; }
 .message-user { background: rgba(91,33,182,0.12); color: #fff; align-self:flex-end; }
-.chat-input-row { display:flex; gap:12px; align-items:center; width:100%; }
-.chat-input-row input { flex:1 1 auto; min-width:0; padding:10px 12px; border-radius:8px; border:1px solid rgba(0,0,0,0.08); background: rgba(255,255,255,0.02); color: var(--text); }
-.chat-input-row button { flex:0 0 auto; }
+.chat-input-area { display:flex; flex-direction:column; gap:8px; width:100%; }
+.chat-input-area input { width:100%; padding:10px 12px; border-radius:8px; border:1px solid rgba(0,0,0,0.08); background: rgba(255,255,255,0.02); color: var(--text); }
+.chat-input-actions { display:flex; gap:8px; align-items:center; }
+.chat-input-actions .btn-primary { flex:1; }
 
-/* mic/speak buttons */
-.mic-button { background: rgba(255,255,255,0.96); border-radius:8px; padding:10px 12px; font-size:18px; }
+/* mic/speak buttons: compact icon-only squares */
+.mic-button, .speak-button { width:38px; height:38px; flex:0 0 auto; padding:0; background: rgba(255,255,255,0.96); border-radius:8px; font-size:16px; display:flex; align-items:center; justify-content:center; }
 .mic-button.listening { background: #ef4444; color: white; }
-.speak-button { background: rgba(255,255,255,0.96); border-radius:8px; padding:10px 12px; font-size:16px; }
 
 /* live draft transcription */
 .message-draft { background: transparent; color: var(--muted); padding:6px 8px; font-style:italic; }
@@ -36,8 +36,7 @@
 .chat-widget .robot-avatar { width:260px; height:260px; flex:0 0 auto; display:flex; align-items:center; justify-content:center; margin:24px auto 8px auto; }
 .chat-widget svg { width:100%; height:100%; max-width:260px; max-height:260px; }
 .chat-widget .chat-body { width:100%; flex:1; display:flex; flex-direction:column; gap:12px; }
-.chat-widget .messages { flex:1; overflow:auto; padding-right:6px; }
-.chat-widget .chat-input-row { display:flex; gap:8px; align-items:center; }
+.chat-widget .messages { flex:1; max-height:none; overflow:auto; padding-right:6px; }
 
 @media (max-width:980px) {
   .chat-widget { position:relative; height:auto; flex-direction:row; align-items:center; padding:18px; }

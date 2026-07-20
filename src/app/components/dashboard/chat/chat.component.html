@@ -14,11 +14,13 @@
             <div *ngFor="let m of messages" class="message" [ngClass]="{'message-bot': m.sender === 'bot', 'message-user': m.sender === 'user', 'message-draft': m.draft}">{{m.text}}</div>
         </div>
 
-        <div class="chat-input-row">
-            <button class="btn mic-button" title="Record voice" (click)="toggleListening()" [class.listening]="listening" [attr.aria-pressed]="listening">🎤</button>
+        <div class="chat-input-area">
             <input #chatInput type="text" placeholder="Ask MediBot..." aria-label="Chat input" (keydown.enter)="onSendChat(chatInput.value); chatInput.value='';" />
-            <button class="btn btn-primary" (click)="onSendChat(chatInput.value); chatInput.value='';">Send</button>
-            <button class="btn speak-button" title="Play latest bot reply" (click)="speakLastBot()">🔊</button>
+            <div class="chat-input-actions">
+                <button class="btn mic-button" title="Record voice" (click)="toggleListening()" [class.listening]="listening" [attr.aria-pressed]="listening">🎤</button>
+                <button class="btn btn-primary" (click)="onSendChat(chatInput.value); chatInput.value='';">Send</button>
+                <button class="btn speak-button" title="Play latest bot reply" (click)="speakLastBot()">🔊</button>
+            </div>
         </div>
     </div>
 </div>
