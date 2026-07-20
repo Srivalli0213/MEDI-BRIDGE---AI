@@ -18,6 +18,15 @@
 
 .nav-actions { display:flex; gap:12px; align-items:center; }
 
+/* Topbar buttons: white background on header */
+.topbar .btn {
+  background: #ffffff;
+  color: var(--accent);
+  border: 1px solid rgba(11,37,64,0.06);
+  box-shadow: none;
+}
+.topbar .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(11,37,64,0.08); }
+
 /* Buttons */
 .btn {
   padding:10px 18px;
