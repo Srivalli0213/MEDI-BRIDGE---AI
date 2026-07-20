@@ -1,0 +1,68 @@
+<nav class="topbar" role="navigation" aria-label="Main navigation">
+  <a class="logo" role="button" (click)="goHome()">MediBridge</a>
+  <div class="nav-actions">
+    <button class="btn btn-ghost" (click)="handleLogin()" aria-label="Login">Login</button>
+    <button class="btn btn-primary" (click)="handleRegister()" aria-label="Register">Register</button>
+  </div>
+</nav>
+
+<main class="app-container">
+  <!-- Recreated landing exactly like provided design: single large white rounded panel centered -->
+  <section class="landing-hero" *ngIf="currentView === 'home'" role="banner">
+    <div class="landing-wrapper">
+      <div class="panel">
+        <header class="panel-nav">
+          <div class="panel-logo">MediBridge</div>
+        </header>
+
+        <div class="panel-body">
+          <h1 class="panel-title">Revolutionize how you manage patients</h1>
+          <p class="panel-sub">Unlock the power of data-driven healthcare. Streamline operations, enhance patient care, and make informed decisions with ease.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Login Page -->
+  <section class="auth-page" *ngIf="currentView === 'login'">
+    <div class="form-card">
+      <h2>Sign in to MediBridge</h2>
+      <form (submit)="onLogin($event)" novalidate>
+        <label for="login-email">Email</label>
+        <input id="login-email" name="email" type="email" required autocomplete="email" />
+
+        <label for="login-password">Password</label>
+        <input id="login-password" name="password" type="password" required autocomplete="current-password" />
+
+        <div class="form-row">
+          <button class="btn btn-primary" type="submit">Sign in</button>
+          <button type="button" class="btn btn-ghost" (click)="goHome()">Back</button>
+        </div>
+      </form>
+      <p class="text-muted">Don't have an account? <a (click)="handleRegister()" role="button">Create one</a></p>
+    </div>
+  </section>
+
+  <!-- Register Page -->
+  <section class="auth-page" *ngIf="currentView === 'register'">
+    <div class="form-card">
+      <h2>Create an account</h2>
+      <form (submit)="onRegister($event)" novalidate>
+        <label for="reg-name">Full name</label>
+        <input id="reg-name" name="name" type="text" required autocomplete="name" />
+
+        <label for="reg-email">Email</label>
+        <input id="reg-email" name="email" type="email" required autocomplete="email" />
+
+        <label for="reg-password">Password</label>
+        <input id="reg-password" name="password" type="password" required autocomplete="new-password" />
+
+        <div class="form-row">
+          <button class="btn btn-primary" type="submit">Create account</button>
+          <button type="button" class="btn btn-ghost" (click)="goHome()">Back</button>
+        </div>
+      </form>
+      <p class="text-muted">Already registered? <a (click)="handleLogin()" role="button">Sign in</a></p>
+    </div>
+  </section>
+</main>
