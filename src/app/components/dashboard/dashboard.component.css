@@ -14,22 +14,22 @@
 .btn-ghost { background:transparent; color: var(--accent); border:1px solid rgba(15,23,36,0.04); padding:8px 12px; border-radius:8px; }
 
 .form-card {
-  width:100%;
-  max-width:480px;
   background: var(--card-bg);
-  border-radius:12px;
-  padding:28px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+  border-radius:16px;
+  padding:32px;
+  box-shadow: 0 10px 30px rgba(11,18,45,0.08);
   color: var(--text);
 }
 
-.form-card h2 { margin-bottom:14px; font-size:22px; color: var(--text); }
+.form-card h2 { margin-bottom:6px; font-size:24px; color: var(--text); }
+.form-card p { color: var(--muted); margin-bottom:20px; }
 
-.form-row { display:flex; gap:12px; margin-top:18px; }
+.form-row { display:flex; gap:12px; margin-top:24px; }
 .form-row .btn { flex:1; }
 
-.form-card .text-muted { color: rgba(255,255,255,0.85); margin-top:14px; font-size:14px; }
-.text-muted { color: rgba(255,255,255,0.85); font-size:14px; }
+.text-muted { color: var(--muted); font-size:14px; }
+
+.dashboard-toolbar { display:flex; align-items:center; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
 
 @media (max-width:480px) {
   .form-row { flex-direction:column; }
@@ -37,7 +37,7 @@
 
 /* Appointments list styles */
 .appointments { display:flex; flex-direction:column; gap:12px; margin-top:8px; }
-.appointment-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px; border-radius:10px; background: rgba(255,255,255,0.02); border:1px solid rgba(15,23,36,0.04); }
+.appointment-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px; border-radius:10px; background: rgba(11,37,64,0.02); border:1px solid rgba(15,23,36,0.06); }
 .appointment-main { display:flex; flex-direction:column; }
 .appointment-patient { font-weight:700; color: var(--text); }
 .appointment-meta { color: var(--muted); font-size:13px; margin-top:4px; }
@@ -50,26 +50,19 @@
   .appointment-actions { width:100%; justify-content:flex-end; }
 }
 
-/* Dashboard layout and left sidebar chat */
-.dashboard-layout { display:flex; gap:28px; align-items:flex-start; justify-content:space-between; padding:48px 16px; min-height: calc(100vh - 72px); }
-.chat-sidebar { width:360px; min-width:300px; display:flex; justify-content:flex-start; margin-left:-96px; padding-left:8px; overflow:visible; }
+/* Full-width dashboard shell (breaks out of the shared .app-container) */
+.dashboard { margin:0 auto; padding:0 32px;}
 
-/* If the sidebar would overlap on smaller screens, reset offset */
+/* Two-column layout: fixed sidebar + flexible main content */
+.dashboard-layout { display:grid; grid-template-columns: 380px 1fr; gap:32px; align-items:start; padding:48px 0; min-height: calc(100vh - 72px); }
+
+.chat-sidebar { min-width:0; }
+
+.dashboard-main { min-width:0; }
+.dashboard-card { max-width:900px; }
+
 @media (max-width:980px) {
-  .chat-sidebar { margin-left:0; padding-left:0; }
-}
-
-.dashboard-main { flex:1; display:flex; justify-content:flex-end; align-items:flex-start; }
-.dashboard-card { margin-left:20px; }
-
-@media (max-width:980px) {
-  .dashboard-layout { gap:18px; padding:22px 12px; }
-  .chat-sidebar { width:320px; min-width:260px; }
-  .dashboard-main { justify-content:center; }
-  .dashboard-card { margin-left:0; }
-}
-
-@media (max-width:520px) {
-  .chat-sidebar { width:100%; }
-  .dashboard-layout { flex-direction:column; }
+  .dashboard { padding:0 16px; }
+  .dashboard-layout { grid-template-columns: 1fr; gap:24px; padding:24px 0; }
+  .dashboard-card { max-width:none; }
 }

@@ -5,13 +5,13 @@
         </aside>
 
         <main class="dashboard-main">
-            <div class="form-card dashboard-card" style="width:720px; max-width:92%;">
+            <div class="form-card dashboard-card">
                 <h2>Dashboard</h2>
                 <p>Upcoming doctor appointments</p>
 
-                <div style="margin-bottom:12px;">
+                <div class="dashboard-toolbar">
                     <button class="btn btn-ghost" (click)="medibot.testBot()">Debug: Test MediBot</button>
-                    <span class="text-muted" style="margin-left:8px;">(Triggers a sample bot reply — use to verify responses)</span>
+                    <span class="text-muted dashboard-toolbar-hint">(Triggers a sample bot reply — use to verify responses)</span>
                 </div>
 
                 <div class="appointments">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
 
-                <div class="form-row" style="margin-top:18px;">
+                <div class="form-row">
                     <button class="btn btn-primary" (click)="goHome()">Back to home</button>
                 </div>
             </div>
