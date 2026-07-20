@@ -1,13 +1,13 @@
 :root {
-  --primary: #5b21b6; /* professional deep purple */
- --accent: #4c1d95; /* deeper accent */
- --text: #0f1724; /* dark text for cards */
- --muted: rgba(15,23,36,0.65);
- --card-bg: #ffffff; /* white main card */
+  --primary: #0d6efd; /* clean blue */
+  --accent: #0a58ca; /* deeper blue accent */
+  --text: #0b2540; /* dark text for cards */
+  --muted: rgba(11,37,64,0.65);
+  --card-bg: #ffffff; /* white main card */
 
- /* background gradient for page */
- --bg-1: #eef2ff; /* very light purple */
- --bg-2: #e5defc; /* slightly deeper */
+  /* background gradient for page */
+  --bg-1: #f0f7ff; /* very light blue */
+  --bg-2: #e6f0ff; /* slightly deeper */
 }
 
 * {
