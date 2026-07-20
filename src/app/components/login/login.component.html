@@ -1,0 +1,18 @@
+<section class="auth-page">
+    <div class="form-card">
+        <h2>Sign in to MediBridge</h2>
+        <form (submit)="onLogin($event)" novalidate>
+            <label for="login-email">Email</label>
+            <input id="login-email" name="email" type="email" required autocomplete="email" />
+
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" required autocomplete="current-password" />
+
+            <div class="form-row">
+                <button class="btn btn-primary" type="submit">Sign in</button>
+                <button type="button" class="btn btn-ghost" (click)="goHome()">Back</button>
+            </div>
+        </form>
+        <p class="text-muted">Don't have an account? <a (click)="handleRegister()" role="button">Create one</a></p>
+    </div>
+</section>
